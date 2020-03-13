@@ -15,8 +15,8 @@ let caloriesZero = 0;
 let fatsZero = 0;
 let proteinZero = 0;
 let carbohydratesZero = 0;
-// function starts here
 
+// function starts here
 button.addEventListener("click", async () => {
   let foodName1 = foodName.value;
   const response = await axios.get(
@@ -67,17 +67,14 @@ button.addEventListener("click", async () => {
   // puting input items into the middle box
   const foodInputlist = document.querySelectorAll(".food-input ");
   foodInputlist[counter].innerHTML = foodName1;
-
   counter += 1;
+  document.querySelector(".lastpart").style.display = "block";
 
-  // let fat = "9 calories";
-  // let protein = "4 calories";
-  // let carbohydrates = "4 calories";
   if (
-    fatsZero * 9 >= caloriesZero * 0.4 && // working fine
-    fatsZero * 9 <= caloriesZero * 0.7 && // working fine
-    proteinZero * 4 >= caloriesZero * 0.15 && //working fine
-    proteinZero * 4 <= caloriesZero * 0.3 && //working fine
+    fatsZero * 9 >= caloriesZero * 0.4 &&
+    fatsZero * 9 <= caloriesZero * 0.7 &&
+    proteinZero * 4 >= caloriesZero * 0.15 &&
+    proteinZero * 4 <= caloriesZero * 0.3 &&
     carbohydratesZero * 4 >= caloriesZero * 0.15 &&
     carbohydratesZero * 4 <= caloriesZero * 0.3
   ) {
